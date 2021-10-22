@@ -5,15 +5,22 @@
 }
 body {
   scroll-behavior: smooth;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .sticky-wrap {
   position: fixed;
   width: 100%;
   background: #000;
+  top: 0;
+  z-index: 5;
 }
 .time-section {
   height: 50vh;
+}
+.time-section:nth-child(1) {
+  margin-top: 96px;
 }
 .timeline {
   display: block;
@@ -74,4 +81,24 @@ body {
   z-index: 5;
   display: grid;
   place-items: center;
+}
+.time-section:nth-child(odd) {
+  background: #9c9c9c !important;
+}
+@media only screen and (max-width: 768px) {
+  .timeline-wrap {
+    display: flex !important;
+    width: 600vw;
+  }
+  .time-section {
+    width: 100vw !important;
+    margin-top: 96px;
+  }
+  .time-section:nth-child(odd) {
+    background: #cecece !important;
+  }
+}
+.scroll-wrap {
+  width: 100vw;
+  overflow-x: scroll;
 }

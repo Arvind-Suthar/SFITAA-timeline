@@ -67,7 +67,8 @@
                     </div>
                 </div>
          </div>
-        <main class="timeline-wrap">
+         <div class="scroll-wrap">
+         <main class="timeline-wrap">
                 <section class="time-section" id="year1">
                     section 1
                 </section>
@@ -87,6 +88,8 @@
                     section 6                
                 </section>
             </main>
+         </div>
+        
         <script src="js/scrollspy.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
