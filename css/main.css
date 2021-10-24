@@ -8,7 +8,28 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
+body * {
+  scroll-behavior: smooth;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 .sticky-wrap {
   position: fixed;
   width: 100%;
@@ -16,9 +37,7 @@ body {
   top: 0;
   z-index: 5;
 }
-.time-section {
-  height: 50vh;
-}
+
 .time-section:nth-child(1) {
   margin-top: 96px;
 }
@@ -78,27 +97,91 @@ body {
   left: 49px;
 }
 .time-section {
-  z-index: 5;
   display: grid;
   place-items: center;
-}
-.time-section:nth-child(odd) {
-  background: #9c9c9c !important;
+  min-height: 70vh;
+  overflow: hidden;
 }
 @media only screen and (max-width: 768px) {
   .timeline-wrap {
+    position: relative;
     display: flex !important;
     width: 600vw;
   }
   .time-section {
+    display: flex;
     width: 100vw !important;
     margin-top: 96px;
+    z-index: -1;
+    /*height: calc(100vh - 96px);*/
   }
-  .time-section:nth-child(odd) {
-    background: #cecece !important;
+  .time-section::after,
+  .time-section::before {
+    display: none;
   }
 }
 .scroll-wrap {
   width: 100vw;
   overflow-x: scroll;
+}
+
+/*-----------------------------------------
+YEAR SECTIONS
+-----------------------------------------*/
+.year-title {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 7rem;
+  color: #8c7851;
+  font-weight: bolder;
+}
+.year-title img {
+  height: 80%;
+}
+
+.time-section::before {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background: #8c7851;
+  position: absolute;
+}
+.time-section::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #8c7851;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.pos-rel {
+  position: relative;
+}
+.year-span {
+  color: #8c7851;
+  font-weight: bolder;
+  padding: 0.8rem 0;
+  font-size: 1.3rem;
+}
+.year-section-header {
+  font-size: 2.8rem;
+  font-weight: bold;
+  line-height: 0.9;
+  padding-bottom: 1rem;
+}
+.year-section-header::after {
+  content: "";
+  height: 4px;
+  width: 15%;
+  background: #8c7851;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.year-section-info {
+  font-size: 1rem;
+  padding: 1rem 0;
 }
