@@ -7,6 +7,7 @@ body {
   scroll-behavior: smooth;
   width: 100vw;
   overflow-x: hidden;
+  background: #f2eadf;
 }
 body * {
   scroll-behavior: smooth;
@@ -35,7 +36,7 @@ body * {
   width: 100%;
   background: #000;
   top: 0;
-  z-index: 5;
+  z-index: 9999;
 }
 
 .time-section:nth-child(1) {
@@ -49,10 +50,13 @@ body * {
 .scroller {
   display: flex;
   overflow: hidden;
-  width: 100%;
+  /*width: 100%;*/
   transition: 0.7s;
+  padding-bottom: 5px;
+  margin-left: 0;
 }
 .item {
+  text-decoration: none;
   position: relative;
   text-align: center;
   padding: 20px 40px;
@@ -70,15 +74,24 @@ body * {
   top: 90%;
   z-index: 2;
 }
+.active .link::after {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  top: -3px;
+  left: calc(-50% + 2px);
+}
 .link {
   height: 10px;
   width: 10px;
   border-radius: 50%;
   background: #fff;
   position: absolute;
-  margin-left: -5px;
+  margin-left: 10px;
   top: 85%;
-  z-index: 3;
 }
 .item:nth-child(2)::before {
   width: 50%;
@@ -95,36 +108,17 @@ body * {
   border: 1px solid #fff;
   top: 53%;
   left: 49px;
+  display: none;
 }
 .time-section {
   display: grid;
   place-items: center;
-  min-height: 70vh;
+  min-height: 80vh;
   overflow: hidden;
 }
-@media only screen and (max-width: 768px) {
-  .timeline-wrap {
-    position: relative;
-    display: flex !important;
-    width: 600vw;
-  }
-  .time-section {
-    display: flex;
-    width: 100vw !important;
-    margin-top: 96px;
-    z-index: -1;
-    /*height: calc(100vh - 96px);*/
-  }
-  .time-section::after,
-  .time-section::before {
-    display: none;
-  }
-}
-.scroll-wrap {
-  width: 100vw;
-  overflow-x: scroll;
-}
 
+@media only screen and (max-width: 767px) {
+}
 /*-----------------------------------------
 YEAR SECTIONS
 -----------------------------------------*/
@@ -136,9 +130,10 @@ YEAR SECTIONS
   font-size: 7rem;
   color: #8c7851;
   font-weight: bolder;
+  padding: 1rem;
 }
 .year-title img {
-  height: 80%;
+  max-height: 80%;
 }
 
 .time-section::before {
@@ -148,13 +143,26 @@ YEAR SECTIONS
   background: #8c7851;
   position: absolute;
 }
-.time-section::after {
+.circle-marker {
   content: "";
   width: 20px;
   height: 20px;
   background: #8c7851;
   position: absolute;
   border-radius: 50%;
+}
+.circle-marker::before,
+.circle-marker::after {
+  content: "";
+  position: absolute;
+  border: 1px solid #8c7851;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  animation: blink 1.4s linear infinite;
+}
+.circle-marker::after {
+  animation-delay: 0.7s;
 }
 
 .pos-rel {
@@ -167,10 +175,11 @@ YEAR SECTIONS
   font-size: 1.3rem;
 }
 .year-section-header {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   font-weight: bold;
-  line-height: 0.9;
+  line-height: 1;
   padding-bottom: 1rem;
+  word-spacing: 100vw;
 }
 .year-section-header::after {
   content: "";
@@ -184,4 +193,44 @@ YEAR SECTIONS
 .year-section-info {
   font-size: 1rem;
   padding: 1rem 0;
+}
+@keyframes blink {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+.info-wrap {
+  padding: 0rem 3rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .timeline-wrap {
+    position: relative;
+  }
+  .time-section {
+    display: flex;
+    width: 100vw !important;
+    z-index: -1;
+    /*height: calc(100vh - 96px);*/
+  }
+  .time-section::before {
+    left: 5%;
+  }
+  .circle-marker {
+    left: calc(5% - 10px);
+  }
+  .info-wrap {
+    padding: 0rem 4rem !important;
+  }
+  .year-section-header {
+    font-size: 2rem;
+  }
+  .year-section-info {
+    font-size: 0.8rem;
+  }
 }
