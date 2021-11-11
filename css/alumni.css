@@ -1,0 +1,65 @@
+body {
+  background-color: #cfc6b7;
+  background-image: url("../img/temp_bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+.profile-pic {
+  max-height: 150px;
+  /*max-width: 100px;*/
+  border-radius: 50%;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-pull-right {
+  float: right;
+  background: #7a1d28;
+}
+.content-text::before {
+  content: '"';
+}
+
+.msg-box {
+  border: 12px dashed #555;
+  position: relative;
+  border-image: url("../img/border_bg.png") 30 round;
+  padding: 1rem;
+  background: #dfc49c;
+}
+.line {
+  position: relative;
+}
+.line::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background: #555;
+  left: 0;
+}
+.header-img {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+.header-img img {
+  height: 100px;
+}
+@media only screen and (min-width: 768px) {
+  .bg-container {
+    height: 100vh;
+  }
+  .msg-box {
+    height: 100vh;
+    overflow-y: scroll;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .line::before {
+    display: none;
+  }
+}

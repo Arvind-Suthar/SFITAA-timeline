@@ -115,6 +115,7 @@ body * {
   place-items: center;
   min-height: 80vh;
   overflow: hidden;
+  padding: 96px 0 96px 0;
 }
 
 @media only screen and (max-width: 767px) {
