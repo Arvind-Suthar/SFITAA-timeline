@@ -1,0 +1,13 @@
+$maroon: #7a1d28;
+$lightbrown: #f2eadf;
+$white: #ffffff;
+$darkgrey: #555555;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pos-rel {
+  position: relative;
+}

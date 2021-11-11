@@ -1,17 +1,14 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.pos-rel, .time-section {
+  position: relative;
 }
+
 body {
   scroll-behavior: smooth;
   width: 100vw;
   overflow-x: hidden;
   background: #f2eadf;
 }
-body * {
-  scroll-behavior: smooth;
-}
+
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
@@ -31,6 +28,8 @@ body * {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/*---- TOP TIMELINE NAVBAR  ----*/
 .sticky-wrap {
   position: fixed;
   width: 100%;
@@ -39,78 +38,107 @@ body * {
   z-index: 9999;
 }
 
-.time-section:nth-child(1) {
-  margin-top: 96px;
-}
 .timeline {
   display: block;
-
   height: 96px;
 }
+
 .scroller {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
   /*width: 100%;*/
+  -webkit-transition: 0.7s;
   transition: 0.7s;
   padding-bottom: 5px;
   margin-left: 0;
 }
+
 .item {
   text-decoration: none;
   position: relative;
   text-align: center;
   padding: 20px 40px;
 }
-.year {
-  color: #8c7851;
-}
+
 .item::before {
   content: "";
   height: 2px;
   width: 100%;
-  background: #fff;
+  background: #ffffff;
   position: absolute;
   margin-left: -50%;
   top: 90%;
   z-index: 2;
 }
+
+.item:nth-child(2)::before {
+  width: 50%;
+  margin-left: 0;
+}
+
+.item:hover .year {
+  color: #4b412c;
+}
+
+.year {
+  color: #7a1d28;
+}
+
+.link {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  position: absolute;
+  margin-left: 10px;
+  top: 85%;
+}
+
 .active .link::after {
   content: "";
   position: absolute;
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 1px solid #ffffff;
   top: -3px;
   left: calc(-50% + 2px);
 }
-.link {
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background: #fff;
-  position: absolute;
-  margin-left: 10px;
-  top: 85%;
-}
-.item:nth-child(2)::before {
-  width: 50%;
-  margin-left: 0;
-}
-.item:hover .year {
-  color: #4b412c;
-}
+
 .marker {
   position: absolute;
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 1px solid #ffffff;
   top: 53%;
   left: 49px;
   display: none;
 }
+
+/*-----------------------------------------
+YEAR SECTIONS
+-----------------------------------------*/
+.year-title {
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-size: 7rem;
+  color: #7a1d28;
+  font-weight: bolder;
+  padding: 1rem;
+}
+
+.year-title img {
+  max-height: 80%;
+}
+
 .time-section {
+  display: -ms-grid;
   display: grid;
   place-items: center;
   min-height: 80vh;
@@ -118,63 +146,50 @@ body * {
   padding: 96px 0 96px 0;
 }
 
-@media only screen and (max-width: 767px) {
-}
-/*-----------------------------------------
-YEAR SECTIONS
------------------------------------------*/
-.year-title {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  place-items: center;
-  font-size: 7rem;
-  color: #8c7851;
-  font-weight: bolder;
-  padding: 1rem;
-}
-.year-title img {
-  max-height: 80%;
+.time-section:nth-child(1) {
+  margin-top: 96px;
 }
 
 .time-section::before {
   content: "";
   width: 1px;
   height: 100%;
-  background: #8c7851;
+  background: #7a1d28;
   position: absolute;
 }
+
 .circle-marker {
   content: "";
   width: 20px;
   height: 20px;
-  background: #8c7851;
+  background: #7a1d28;
   position: absolute;
   border-radius: 50%;
 }
-.circle-marker::before,
-.circle-marker::after {
+
+.circle-marker::before, .circle-marker::after {
   content: "";
   position: absolute;
-  border: 1px solid #8c7851;
+  border: 1px solid #7a1d28;
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  animation: blink 1.4s linear infinite;
-}
-.circle-marker::after {
-  animation-delay: 0.7s;
+  -webkit-animation: blink 1.4s linear infinite;
+          animation: blink 1.4s linear infinite;
 }
 
-.pos-rel {
-  position: relative;
+.circle-marker::after {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
 }
+
 .year-span {
-  color: #8c7851;
+  color: #7a1d28;
   font-weight: bolder;
   padding: 0.8rem 0;
   font-size: 1.3rem;
 }
+
 .year-section-header {
   font-size: 2.6rem;
   font-weight: bold;
@@ -182,42 +197,37 @@ YEAR SECTIONS
   padding-bottom: 1rem;
   word-spacing: 100vw;
 }
+
 .year-section-header::after {
   content: "";
   height: 4px;
   width: 15%;
-  background: #8c7851;
+  background: #7a1d28;
   position: absolute;
   bottom: 0;
   left: 0;
 }
+
 .year-section-info {
   font-size: 1rem;
   padding: 1rem 0;
 }
-@keyframes blink {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2.5);
-    opacity: 0;
-  }
-}
+
 .info-wrap {
   padding: 0rem 3rem;
 }
 
+/*----------Media QUERIES------------*/
 @media only screen and (max-width: 767px) {
   .timeline-wrap {
     position: relative;
   }
   .time-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100vw !important;
     z-index: -1;
-    /*height: calc(100vh - 96px);*/
   }
   .time-section::before {
     left: 5%;
@@ -235,3 +245,30 @@ YEAR SECTIONS
     font-size: 0.8rem;
   }
 }
+
+/*-------KEY FRAMES ---*/
+@-webkit-keyframes blink {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */

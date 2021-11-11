@@ -1,62 +1,79 @@
+.pos-rel {
+  position: relative;
+}
+
 body {
-  background-color: #cfc6b7;
+  background-color: #f2eadf;
   background-image: url("../img/temp_bg.png");
   background-size: cover;
   background-attachment: fixed;
 }
 
-.flex-center {
+.bg-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .btn-pull-right {
   float: right;
   background: #7a1d28;
 }
-.content-text::before {
-  content: '"';
-}
 
 .msg-box {
-  border: 12px dashed #555;
+  border: 12px dashed #555555;
   position: relative;
-  border-image: url("../img/border_bg.png") 30 round;
+  -o-border-image: url("../img/border_bg.png") 30 round;
+     border-image: url("../img/border_bg.png") 30 round;
   padding: 1rem;
   background: #dfc49c;
 }
+
 .line {
   position: relative;
 }
+
 .line::before {
   content: "";
   position: absolute;
   height: 100%;
   width: 1px;
-  background: #555;
+  background: #555555;
   left: 0;
 }
+
 .header-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   padding: 1rem;
 }
+
 .header-img img {
   height: 100px;
 }
+
 .profile-pic {
   max-height: 150px;
   border-radius: 50%;
 }
+
 @media only screen and (min-width: 768px) {
   .bg-container {
     height: 100vh;
   }
-  /*.msg-box {
-    height: 100vh;
-    overflow-y: scroll;
-  }*/
 }
 
 @media only screen and (max-width: 768px) {
@@ -71,3 +88,4 @@ body {
     border-radius: 50%;
   }
 }
+/*# sourceMappingURL=alumni.css.map */
