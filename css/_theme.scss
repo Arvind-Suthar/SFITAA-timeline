@@ -1,7 +1,9 @@
 $maroon: #7a1d28;
-$lightbrown: #f2eadf;
+$lightbrown: #ebe2d4;
 $white: #ffffff;
 $darkgrey: #555555;
+
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 @mixin flex-center {
   display: flex;

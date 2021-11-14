@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 .pos-rel {
   position: relative;
 }
 
 body {
-  background-color: #f2eadf;
+  background-color: #ebe2d4;
   /*background-image: url("../img/temp_bg.png");*/
   background-size: cover;
   background-attachment: fixed;
