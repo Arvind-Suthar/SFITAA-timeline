@@ -51,11 +51,6 @@ body {
   margin: 1rem 0;
 }
 
-.flip-card:hover .card-container {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
 .polaroid-card {
   text-align: center;
 }
@@ -69,11 +64,6 @@ body {
   padding: 1rem 0;
 }
 
-.polaroid-card .subtitle {
-  color: #7a1d28;
-  font-size: 0.8rem;
-}
-
 .card {
   padding: 1rem;
   position: absolute;
@@ -83,9 +73,24 @@ body {
   backface-visibility: hidden;
 }
 
+.card .subtitle {
+  color: #7a1d28;
+  font-size: 0.8rem;
+}
+
 .polaroid-card-back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .polaroid-card-back p {
@@ -103,5 +108,10 @@ body {
   transition: transform 0.6s, -webkit-transform 0.6s;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+}
+
+.subtitle:active {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 /*# sourceMappingURL=events.css.map */
