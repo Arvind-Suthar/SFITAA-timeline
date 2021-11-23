@@ -46,6 +46,10 @@ body {
   background-attachment: fixed;
 }
 
+.ribbon::after {
+  content: "Alumni Speaks";
+}
+
 .bg-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,6 +65,10 @@ body {
 .btn-pull-right {
   float: right;
   background: #7a1d28;
+}
+
+.alumni-text {
+  text-align: justify;
 }
 
 .msg-box {
@@ -105,12 +113,6 @@ body {
 .profile-pic {
   max-height: 150px;
   border-radius: 50%;
-}
-
-@media only screen and (min-width: 768px) {
-  .bg-container {
-    height: 100vh;
-  }
 }
 
 @media only screen and (max-width: 768px) {

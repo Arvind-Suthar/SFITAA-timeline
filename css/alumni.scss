@@ -6,6 +6,11 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+.ribbon {
+  &::after {
+    content: "Alumni Speaks";
+  }
+}
 .bg-container {
   @include flex-center;
 }
@@ -13,7 +18,9 @@ body {
   float: right;
   background: $maroon;
 }
-
+.alumni-text {
+  text-align: justify;
+}
 .msg-box {
   border: 12px dashed $darkgrey;
   position: relative;
@@ -44,11 +51,6 @@ body {
 .profile-pic {
   max-height: 150px;
   border-radius: 50%;
-}
-@media only screen and (min-width: 768px) {
-  .bg-container {
-    height: 100vh;
-  }
 }
 
 @media only screen and (max-width: 768px) {
