@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@900&display=swap");
 .pos-rel, .time-section {
   position: relative;
 }
@@ -116,11 +117,11 @@ body {
 }
 
 .item:hover .year {
-  color: #4b412c;
+  color: #ffffff;
 }
 
 .year {
-  color: #7a1d28;
+  color: #8d8d8d;
 }
 
 .link {
@@ -144,6 +145,10 @@ body {
   left: calc(-50% + 2px);
 }
 
+.active .year {
+  color: #fff;
+}
+
 .marker {
   position: absolute;
   height: 16px;
@@ -164,7 +169,7 @@ YEAR SECTIONS
   display: -ms-grid;
   display: grid;
   place-items: center;
-  font-size: 7rem;
+  font-size: 8rem;
   color: #7a1d28;
   font-weight: bolder;
   padding: 1rem;
@@ -228,7 +233,7 @@ YEAR SECTIONS
 }
 
 .year-section-header {
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   font-weight: bold;
   line-height: 1;
   padding-bottom: 1rem;
@@ -248,10 +253,11 @@ YEAR SECTIONS
 .year-section-info {
   font-size: 1rem;
   padding: 1rem 0;
+  text-align: justify;
 }
 
 .info-wrap {
-  padding: 0rem 3rem;
+  padding: 0rem 1.5rem;
 }
 
 /*----------Media QUERIES------------*/
@@ -260,11 +266,9 @@ YEAR SECTIONS
     position: relative;
   }
   .time-section {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    /*display: flex;
     width: 100vw !important;
-    z-index: -1;
+    z-index: -1;*/
   }
   .time-section::before {
     left: 5%;
@@ -280,6 +284,18 @@ YEAR SECTIONS
   }
   .year-section-info {
     font-size: 0.8rem;
+  }
+  .year-title {
+    font-size: 5rem;
+  }
+  .container {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .year-title img {
+    max-height: 100%;
   }
 }
 

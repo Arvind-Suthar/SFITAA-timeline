@@ -69,11 +69,11 @@ body {
     margin-left: 0;
   }
   &:hover .year {
-    color: #4b412c;
+    color: $white;
   }
 }
 .year {
-  color: $maroon;
+  color: #8d8d8d;
 }
 .link {
   height: 10px;
@@ -84,15 +84,20 @@ body {
   margin-left: 10px;
   top: 85%;
 }
-.active .link::after {
-  content: "";
-  position: absolute;
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  border: 1px solid $white;
-  top: -3px;
-  left: calc(-50% + 2px);
+.active {
+  .link::after {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 1px solid $white;
+    top: -3px;
+    left: calc(-50% + 2px);
+  }
+  .year {
+    color: #fff;
+  }
 }
 
 .marker {
@@ -114,7 +119,7 @@ YEAR SECTIONS
   width: 100%;
   display: grid;
   place-items: center;
-  font-size: 7rem;
+  font-size: 8rem;
   color: $maroon;
   font-weight: bolder;
   padding: 1rem;
@@ -175,7 +180,7 @@ YEAR SECTIONS
   font-size: 1.3rem;
 }
 .year-section-header {
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   font-weight: bold;
   line-height: 1;
   padding-bottom: 1rem;
@@ -194,9 +199,10 @@ YEAR SECTIONS
 .year-section-info {
   font-size: 1rem;
   padding: 1rem 0;
+  text-align: justify;
 }
 .info-wrap {
-  padding: 0rem 3rem;
+  padding: 0rem 1.5rem;
 }
 
 /*----------Media QUERIES------------*/
@@ -205,9 +211,9 @@ YEAR SECTIONS
     position: relative;
   }
   .time-section {
-    display: flex;
+    /*display: flex;
     width: 100vw !important;
-    z-index: -1;
+    z-index: -1;*/
 
     &::before {
       left: 5%;
@@ -225,6 +231,17 @@ YEAR SECTIONS
   }
   .year-section-info {
     font-size: 0.8rem;
+  }
+  .year-title {
+    font-size: 5rem;
+  }
+  .container {
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .year-title img {
+    max-height: 100%;
   }
 }
 

@@ -3,10 +3,12 @@
 body {
   background: $lightbrown;
 }
-
+.ribbon::after {
+  content: "Events";
+}
 .flip-card {
   width: 300px;
-  height: 300px;
+  height: 400px;
   perspective: 1000px;
   margin: 1rem 0;
 }
@@ -16,10 +18,12 @@ body {
 
   .polaroid-img {
     background: #949494;
-    height: 200px;
+    //height: 266px;
+    aspect-ratio: 1;
   }
   .title {
     padding: 1rem 0;
+    font-family: "Source Serif Pro", serif;
   }
 }
 .card {
@@ -29,17 +33,18 @@ body {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  justify-content: space-between;
 
   .subtitle {
     color: $maroon;
     font-size: 0.8rem;
+    cursor: pointer;
   }
 }
 .polaroid-card-back {
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   p {
     text-align: justify;
@@ -52,4 +57,11 @@ body {
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
+}
+
+@media only screen and (min-width: 1024px) {
+  .flip-card {
+    width: 350px;
+    height: 450px;
+  }
 }
