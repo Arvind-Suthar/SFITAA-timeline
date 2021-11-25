@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,900&display=swap");
 .pos-rel {
   position: relative;
 }
@@ -42,6 +42,7 @@
 
 body {
   background: #ebe2d4;
+  font-family: "Source Serif Pro", serif;
 }
 
 .side-col {
@@ -70,6 +71,36 @@ body {
   color: #ffffff;
 }
 
+.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrap .a-center {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mentor-text {
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
 .mentor-img {
   max-height: 40vh;
   border: 10px solid #ffffff;
@@ -91,6 +122,13 @@ body {
           flex-direction: column;
 }
 
+.img-wrap span {
+  color: #7a1d28;
+  font-style: italic;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
 @media only screen and (min-width: 576px) {
   .side-col h1 {
     -webkit-box-orient: vertical;
@@ -110,7 +148,12 @@ body {
 @media only screen and (max-width: 575px) {
   .side-col span {
     display: inline;
-    font-size: 36px;
+    padding: 0 0.5rem;
+    font-size: 3rem;
+  }
+  .sm-h1 h1 {
+    padding: 1rem 0;
+    font-weight: 900;
   }
   .mentor-text {
     padding: 1rem;
@@ -118,8 +161,8 @@ body {
   .lg-h1 {
     display: none;
   }
-  .row > * {
-    padding-right: 0;
+  .row {
+    --bs-gutter-x: 0;
   }
   .container-fluid {
     padding: 0;
