@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,900&display=swap");
+body {
+  font-family: "Source Serif Pro", serif !important;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.ribbon {
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.ribbon::after {
+  content: "From the Desks";
+  position: absolute;
+  color: #ffffff;
+  padding: 0.5rem;
+  font-family: "Lobster", cursive;
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 475px) {
+  .ribbon img {
+    max-width: 350px;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .ribbon img {
+    max-width: 250px;
+  }
+  .ribbon::after {
+    font-size: 1.1rem;
+    padding: 0.2rem;
+  }
+}
+
+body {
+  background: #ebe2d4;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  min-width: 100vw;
+  overflow-x: hidden;
+  font-family: "Source Serif Pro", serif !important;
+}
+
+.ribbon::after {
+  content: "Foreword";
+}
+
+.foreword-header {
+  padding: 1rem;
+}
+
+.foreword-header .foreword-img-wrap {
+  width: 70%;
+}
+
+.foreword-header .foreword-img-wrap::before {
+  content: "";
+  height: 110vh;
+  top: 0;
+  width: 8rem;
+  background: #ddc8a7;
+  position: absolute;
+  z-index: -1;
+}
+
+.foreword-header .foreword-img-wrap::after {
+  content: "";
+  height: 8rem;
+  left: 0;
+  width: 100vw;
+  background: #ddc8a7;
+  position: absolute;
+  z-index: -1;
+}
+
+.foreword-header img {
+  border: 1rem solid #ffffff;
+  width: inherit;
+}
+
+.foreword-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.foreword-name h3,
+.foreword-name h4 {
+  color: #7a1d28;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.foreword-name h4 {
+  opacity: 0.7;
+}
+
+.foreword-para {
+  padding: 0 1rem;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 1024px) {
+  .foreword-img-wrap {
+    width: 80% !important;
+  }
+  .foreword-img-wrap::before {
+    width: 6rem !important;
+    height: 130vh !important;
+  }
+  .foreword-img-wrap::after {
+    height: 6rem !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .foreword-img-wrap {
+    width: 80% !important;
+  }
+  .foreword-img-wrap::before {
+    display: none;
+  }
+  .foreword-img-wrap::after {
+    display: none;
+  }
+  .foreword-container {
+    background: #ddc8a7;
+  }
+  .foreword-name {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1rem;
+  }
+}
+/*# sourceMappingURL=foreword_theme1.css.map */
